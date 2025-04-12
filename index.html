@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Moosa Malik - Personal Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  scroll-behavior: smooth;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: linear-gradient(to right, #004e92, #000428);
+  padding: 15px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 30px;
+}
+header nav ul li a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+header nav ul li a:hover {
+  color: #e0e0e0;
+}
+#home {
+  background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+  position: relative;
+}
+#home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+#home h1,
+#home p {
+  position: relative;
+  z-index: 1;
+}
+#home h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+#home p {
+  font-size: 1.2em;
+  max-width: 700px;
+}
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 120px auto 60px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s forwards;
+}
+.section:nth-of-type(2) { animation-delay: 0.2s; }
+.section:nth-of-type(3) { animation-delay: 0.4s; }
+.section:nth-of-type(4) { animation-delay: 0.6s; }
+.section:nth-of-type(5) { animation-delay: 0.8s; }
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #004e92;
+  position: relative;
+  padding-bottom: 10px;
+}
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 60px;
+  background: #000428;
+  border-radius: 2px;
+}
+.section p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+.profile-pic {
+  flex: 0 0 240px;
+  max-width: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.about-text {
+  flex: 1;
+}
+.portfolio-item {
+  margin: 30px 0;
+  border-left: 4px solid #004e92;
+  padding-left: 15px;
+}
+.portfolio-item h3 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #000428;
+}
+.portfolio-image {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.portfolio-image:hover {
+  transform: scale(1.05);
+}
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#contact input,
+#contact textarea {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #004e92;
+}
+#contact button {
+  padding: 12px;
+  font-size: 1em;
+  border: none;
+  background: #000428;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#contact button:hover {
+  background: #004e92;
+}
+footer {
+  background: #000428;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+@media (max-width: 768px) {
+  header nav ul {
+    gap: 15px;
+  }
+  #home h1 {
+    font-size: 2.5em;
+  }
+  .section {
+    margin: 100px 20px 40px 20px;
+    padding: 60px 20px;
+  }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-pic {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#hobbies">Hobbies</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+<section id="home">
+<h1>Welcome to My World</h1>
+<p>Explore my portfolio, discover my passions, and get to know my creative journey.</p>
+</section>
+<section id="about" class="section">
+<h2>About Me</h2>
+<div class="about-container">
+<img src="https://robohash.org/MoosaMalik?set=set4" alt="Animated Character" class="profile-pic" />
+<div class="about-text">
+<p>I’m Moosa Malik, a dedicated web developer and creative thinker with a passion for clean design and innovative ideas. My journey into coding started with curiosity and quickly evolved into a love for building engaging online experiences.</p>
+<p>When I’m not working on websites, I explore art, literature, and emerging technologies. This website is a reflection of my professional pursuits and personal interests—giving you a glimpse into my creative world.</p>
+</div>
+</div>
+</section>
+<section id="portfolio" class="section">
+<h2>Portfolio</h2>
+<div class="portfolio-item">
+<h3>Barbican Rebrand</h3>
+<img class="portfolio-image" src="https://picsum.photos/seed/barbican/600/400" alt="Barbican Rebrand" />
+<p>A comprehensive redesign project for Barbican that modernizes its visual identity while respecting its storied heritage. The process focused on innovative typography, refreshed color schemes, and a clean, contemporary layout.</p>
+</div>
+<div class="portfolio-item">
+<h3>Visual Self Identity</h3>
+<img class="portfolio-image" src="https://images.unsplash.com/photo-1534081333815-ae5019106622?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Visual Self Identity" />
+<p>This project explores a bespoke, personal visual language that combines unique design elements and original typography. It represents a creative journey into self-expression and professional identity.</p>
+</div>
+<div class="portfolio-item">
+<h3>Instagram Rebrand – Insta Core</h3>
+<img class="portfolio-image" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Instagram Rebrand Concept" />
+<p>A conceptual rebrand of Instagram focused on revitalizing its core visual language. The project highlights innovative design trends while emphasizing community values and a modern digital aesthetic.</p>
+</div>
+</section>
+<section id="hobbies" class="section">
+<h2>Hobbies & Interests</h2>
+<p>When I’m not immersed in code, I keep active at the gym, write poetry (especially in Urdu), and stay updated with the ever-evolving world of cryptocurrency. These varied interests fuel my creativity and enrich my personal and professional work.</p>
+</section>
+<section id="contact" class="section">
+<h2>Contact Me</h2>
+<p>If you'd like to discuss a project, collaboration, or just want to say hello, please use the form below or email me directly.</p>
+<form action="#" method="post">
+<input type="text" name="name" placeholder="Your Name" required />
+<input type="email" name="email" placeholder="Your Email" required />
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+<p style="margin-top: 20px">Or email me directly at <a href="mailto:m57malik@uwaterloo.ca">m57malik@uwaterloo.ca</a></p>
+</section>
+<footer>
+<p>&copy; 2025 Moosa Malik. All rights reserved.</p>
+</footer>
+</body>
+</html>
